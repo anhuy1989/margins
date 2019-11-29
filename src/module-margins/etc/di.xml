@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Kodbruket\Margins\Model\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">marginsLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Kodbruket\Margins\Model\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Kodbruket\Margins\Api\HttpClientInterface"
+                type="Kodbruket\Margins\Model\Http\Curl" />
+
+    <preference for="Kodbruket\Margins\Api\HttpRequestTransferInterface"
+                type="Kodbruket\Margins\Model\Http\Transfer" />
+</config>
